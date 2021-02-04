@@ -1,7 +1,7 @@
 # Using official python runtime base image
 FROM python:2.7-alpine
 
-# Set the application directory
+# Set the application directory working
 WORKDIR /app
 
 # Install our requirements.txt
