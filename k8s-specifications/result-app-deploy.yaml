@@ -11,19 +11,17 @@ spec:
     matchLabels:
       name: result-app-pod
       app: demo-voting-app
-
+    
   template:
     metadata:
       name: result-app-pod
       labels:
         name: result-app-pod
         app: demo-voting-app
-      annotations:
-        'consul.hashicorp.com/connect-inject': 'true'
-        'consul.hashicorp.com/connect-service-upstreams': 'postgres:5432'
     spec:
       containers:
         - name: result-app
           image: devendradhoot/result:latest
           ports:
-          - containerPort: 80
+            - containerPort: 80
+    
