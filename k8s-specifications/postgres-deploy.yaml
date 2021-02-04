@@ -11,16 +11,13 @@ spec:
     matchLabels:
       name: postgres-pod
       app: demo-voting-app
-
+    
   template:
     metadata:
       name: postgres-pod
       labels:
         name: postgres-pod
         app: demo-voting-app
-      annotations:
-        'consul.hashicorp.com/connect-inject': 'true'
-        'consul.hashicorp.com/connect-service-upstreams': 'workerapp:80'
     spec:
       containers:
         - name: postgres
@@ -32,8 +29,3 @@ spec:
               value: "postgres"
             - name: POSTGRES_PASSWORD
               value: "postgres"
-
-
-          
-        
-          
