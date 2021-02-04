@@ -1,4 +1,3 @@
-//Worker app
 FROM microsoft/dotnet:2.0.0-sdk
 
 WORKDIR /code
