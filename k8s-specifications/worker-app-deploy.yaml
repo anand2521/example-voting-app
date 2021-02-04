@@ -11,19 +11,14 @@ spec:
     matchLabels:
       name: worker-app-pod
       app: demo-voting-app
-
+    
   template:
     metadata:
       name: worker-app-pod
       labels:
         name: worker-app-pod
         app: demo-voting-app
-      annotations:
-        'consul.hashicorp.com/connect-inject': 'true'
-        'consul.hashicorp.com/connect-service-upstreams': 'redis:6379'
     spec:
       containers:
         - name: worker-app
           image: devendradhoot/worker:latest
-          ports:
-            - containerPort: 80
