@@ -26,14 +26,7 @@ spec:
           image: devendradhoot/vote:latest
           ports:
             - containerPort: 80
-            readinessProbe:
-              httpGet:
-                scheme: HTTP
-                path: /index.html
-                port: 80
-              initialDelaySeconds: 10
-              periodSeconds: 5
-          resources:
+            resources:
            limits:
               cpu: "100m"
            requests:
