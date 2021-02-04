@@ -24,4 +24,3 @@ spec:
           image: devendradhoot/result:latest
           ports:
             - containerPort: 80
-    
