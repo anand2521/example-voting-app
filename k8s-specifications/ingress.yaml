@@ -13,12 +13,12 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: voting-demo
+          serviceName: voting-service
           servicePort: 80
   - host: devopslab-result.tk
     http:
       paths:
       - path: /
         backend:
-          serviceName: result-demo
+          serviceName: result-service
           servicePort: 80
