@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
         - name: result-app
-          image: devendradhoot/result:latest
+          image: devendradhoot/result:v2
           ports:
             - containerPort: 80
