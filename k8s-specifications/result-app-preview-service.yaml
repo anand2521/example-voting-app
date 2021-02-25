@@ -11,5 +11,5 @@ spec:
       nodePort: 30031
   selector:
     app: demo-result-app
-   type: NodePort  
+  type: NodePort  
     
