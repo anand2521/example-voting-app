@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: voting-app-deploy
+  labels:
+    app: demo-voting-app
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: demo-voting-app
+  template:
+    metadata:
+      labels:
+        app: demo-voting-app
+    spec:
+      containers:
+        - name: voting-app
+          image: devendradhoot/vote:v1
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+  strategy:
+     blueGreen:
+       activeService: voting-service
+       previewService: voting-service-preview
+       autoPromotionEnabled: false
