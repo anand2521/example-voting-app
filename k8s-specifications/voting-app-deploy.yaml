@@ -23,6 +23,6 @@ spec:
       - name: vote
       containers:
       - name: voting-app
-        image: devendradhoot/vote:latest
+        image: devendradhoot/vote:v1
         ports:
         - containerPort: 80
