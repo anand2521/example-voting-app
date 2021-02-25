@@ -3,13 +3,13 @@ kind: Service
 metadata:
   name: result-service-preview
   labels:
-    name: result-service
+    app: demo-result-app
 spec:
   ports:
     - port: 80
       targetPort: 80
       nodePort: 30031
   selector:
-    name: result-service
+    app: demo-result-app
    type: NodePort  
     
