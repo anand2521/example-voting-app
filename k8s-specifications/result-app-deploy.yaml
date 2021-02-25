@@ -1,26 +1,37 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: result-app-deploy
   labels:
-    name: result-app-deploy
-    app: demo-voting-app
+    app: demo-result-app
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      name: result-app-pod
-      app: demo-voting-app
-    
+      app: demo-result-app
   template:
     metadata:
-      name: result-app-pod
       labels:
-        name: result-app-pod
-        app: demo-voting-app
+        app: demo-result-app
     spec:
       containers:
         - name: result-app
-          image: devendradhoot/result:v2
+          image: devendradhoot/result:v1
           ports:
-            - containerPort: 80
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+  strategy:
+     blueGreen:
+       activeService: result-service
+       previewService: result-service-preview
+       autoPromotionEnabled: false
