@@ -11,6 +11,6 @@ resources:
 - result-app-preview-service.yaml
 images:
 - name: devendradhoot/vote
-  newTag: v2
+  newTag: v1
 - name: devendradhoot/result
   newTag: v1
