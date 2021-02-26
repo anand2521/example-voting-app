@@ -17,6 +17,6 @@ resources:
 
 images:
 - name: devendradhoot/vote
-  newTag: v2
+  newTag: v1
 - name: devendradhoot/result
-  newTag: v2
+  newTag: v1
