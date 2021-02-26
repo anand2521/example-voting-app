@@ -9,6 +9,12 @@ resources:
 - ingress.yaml
 - voting-app-preview-service.yaml
 - result-app-preview-service.yaml
+- postgres-deploy.yaml
+- postgres-service.yaml
+- redis-deploy.yaml
+- redis-service.yaml
+- worker-app-deploy.yaml
+
 images:
 - name: devendradhoot/vote
   newTag: v2
