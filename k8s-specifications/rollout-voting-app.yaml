@@ -30,6 +30,8 @@ spec:
             httpGet:
               path: /
               port: http
+      imagePullSecrets:
+      - name: vote  
   strategy:
      blueGreen:
        activeService: voting-service
