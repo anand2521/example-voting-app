@@ -1,5 +1,5 @@
 FROM microsoft/dotnet:2.1-sdk-nanoserver-sac2016 as builder
-
+#comment
 WORKDIR /Vote
 COPY Vote/Vote.csproj .
 RUN dotnet restore
